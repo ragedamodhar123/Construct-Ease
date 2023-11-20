@@ -15,3 +15,9 @@ h2
     text-align: center;
     margin-bottom: 30px; 
 }
+
+#3d-model-container {
+    width: 75%;
+    height: 100vh;
+  }
+  

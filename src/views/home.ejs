@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="text-align: center;">Construct Ease</h1>
+    <title>Construct Ease</title>
+    <link rel="stylesheet" href="/public/style.css">
+    </head>
+    <body>
+      <div id="3d-model-container"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"></script>
+    <script>
+     
+    //  import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+    // import { GLTFLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/jsm/loaders/GLTFLoader.js';
+    // Set up Three.js scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    const light = new THREE.PointLight(0xFFFFFF,5); // White light
+
+    light.position.set(0, 50, 50); 
+    scene.add(light);
+    light.position.set(50, 50, 50);// Position the light
+    scene.add(light);
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('3d-model-container').appendChild(renderer.domElement);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    // Load GLB model
+    const loader = new THREE.GLTFLoader();
+    loader.load('/public/mvh.glb', function (gltf) {
+        const model = gltf.scene;
+        // Rest of your code...
+  
+           
+            scene.add(model); // Add model to scene
+
+            // Adjust the camera position if needed
+            camera.position.z =40;
+        });
+
+        // Animation/render loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+ 
 </body>
 </html>

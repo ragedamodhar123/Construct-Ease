@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const path=require('path');
 
-
+app.use(express.static('src/views'));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 app.use(express.static("public"));
