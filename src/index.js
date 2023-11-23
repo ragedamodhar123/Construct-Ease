@@ -7,6 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const path=require('path');
 
+
 app.use(express.static('src/views'));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
@@ -27,10 +28,10 @@ app.post("/signup",async (req,res)=>
     }
 
 
-    const existingUser=await collection.findOne({name:data.name});
+    const existingUser=await collection.findOne({name:data.name}).maxTimeMS(30000);
     if(existingUser)
     {
-        res.send("User already exists. Please choose a different Username.");
+       return  res.status(400).send("User already exists. Please choose a different Username.");
     }
     else
     {
@@ -45,7 +46,7 @@ app.post("/signup",async (req,res)=>
 app.post("/login",async(req,res)=>
 {
     try{
-        const check=await collection.findOne({name:req.body.username});
+        const check=await collection.findOne({name:req.body.username}).maxTimeMS(30000);
         if(!check)
         {
             res.send("user name cannot find");

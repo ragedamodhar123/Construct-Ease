@@ -24,7 +24,7 @@ body
     display: grid;
     align-items: center;
     justify-content: center;
-    background-image: url('arch3.jpg');
+    background-image: url('../public/arch3.jpg');
             background-repeat: no-repeat;
             background-size: cover;
     background-position: center;

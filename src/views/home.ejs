@@ -94,15 +94,13 @@ scene2.add(rrightLight);
 const controls2 = new THREE.OrbitControls(camera2, renderer2.domElement);
      // Load the second model
      const textureLoader2 = new THREE.TextureLoader();
-    const texture2 = textureLoader2.load('/public/t.jpg'); // Replace with your texture file path
+    
      const loader2 = new THREE.GLTFLoader();
      loader2.load('/public/3d2.glb', function (gltf) {
          const model2 = gltf.scene;
-         model2.traverse((o) => {
-        if (o.isMesh) o.material.map = texture2;
-         });
+         
          scene2.add(model2);
-            camera2.position.z = 2;
+            camera2.position.z = 10;
          
      });
  

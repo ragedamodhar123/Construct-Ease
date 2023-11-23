@@ -1,13 +1,21 @@
-const mongoose=require("mongoose");
-const connect=mongoose.connect("mongodb://localhost:27017/Rage");
+// const mongoose=require("mongoose");
+// const connect=mongoose.connect("mongodb://localhost:27017/Rage");
+require('dotenv').config();
+//console.log(process.env.MONGODB_URI);
 
-connect.then(()=>
+
+const mongoose = require('mongoose');
+const connectionString = process.env.MONGODB_URI;
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
+
+.then(()=>
 {
     console.log("Database connected successfully");
 })
-.catch(()=>
+.catch((error)=>
 {
     console.log("Database cannot be connected");
+   // console.log(error.message);
 }
 
 )
