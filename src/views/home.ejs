@@ -3,113 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construct Ease</title>
-    <link rel="stylesheet" href="/public/style.css">
-    
-    
-    </head>
-    <body>
-        <div id="container">
-            <div id="3d-model-container1"></div>
-            <div id="3d-model-container2"></div>
+    <link rel="stylesheet" href="/public/style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>home</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <p>ConstructEase</p>
         </div>
-      <div id="3d-model-container"></div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"></script>
-    <script>
-     
-    //  import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-    // import { GLTFLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/jsm/loaders/GLTFLoader.js';
-    // Set up Three.js scene
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    const light = new THREE.PointLight(0xFFFFFF,3); // White light
+        <ul class="nav-links">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contactus">Contact Us</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+    </nav>
+    <div class="content-items">
+      <img src="" alt="">
 
-    light.position.set(0, 50, 50); 
-    scene.add(light);
-    const blight = new THREE.PointLight(0xFFFFFF,3); // White light
-
-    blight.position.set(0, 50, -50);// Position the light
-    scene.add(blight);
-    const leftLight = new THREE.PointLight(0xFFFFFF,3); // Left light
-leftLight.position.set(-50, 50, 0); 
-scene.add(leftLight);
-
-const rightLight = new THREE.PointLight(0xFFFFFF,3); // Right light
-rightLight.position.set(50, 50, 0); 
-scene.add(rightLight);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('3d-model-container').appendChild(renderer.domElement);
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    // Load GLB model
-    const loader = new THREE.GLTFLoader();
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('/public/t4.jpg'); // Replace with your texture file path
-    loader.load('/public/mvh.glb', function (gltf) {
-        const model = gltf.scene;
-        // Rest of your code...
-        model.traverse((o) => {
-        if (o.isMesh) o.material.map = texture;
-    });
-           
-            scene.add(model); // Add model to scene
-
-            // Adjust the camera position if needed
-            camera.position.z =40;
-        });
-      
-
-        // Animation/render loop
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
-    </script>
- <div id="3d-model-container2"></div>
- <script>
-     // Set up Three.js scene for the second model
-     const scene2 = new THREE.Scene();
-     const camera2 = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1,250);
-     const renderer2 = new THREE.WebGLRenderer();
-     renderer2.setSize(window.innerWidth, window.innerHeight);
-     document.getElementById('3d-model-container2').appendChild(renderer2.domElement);
-     const llight = new THREE.PointLight(0xFFFFFF,1); // White light
-
-llight.position.set(20,50,30); 
-scene2.add(llight);
-const bblight = new THREE.PointLight(0xFFFFFF,1); // White light
-
-bblight.position.set(20, 50, -30);// Position the light
-scene2.add(bblight);
-const lleftLight = new THREE.PointLight(0xFFFFFF,1); // Left light
-lleftLight.position.set(-20, 50, 0); 
-scene2.add(lleftLight);
-
-const rrightLight = new THREE.PointLight(0xFFFFFF,1); // Right light
-rrightLight.position.set(20, 50, 0); 
-scene2.add(rrightLight);
-const controls2 = new THREE.OrbitControls(camera2, renderer2.domElement);
-     // Load the second model
-     const textureLoader2 = new THREE.TextureLoader();
-    
-     const loader2 = new THREE.GLTFLoader();
-     loader2.load('/public/3d2.glb', function (gltf) {
-         const model2 = gltf.scene;
-         
-         scene2.add(model2);
-            camera2.position.z = 10;
-         
-     });
- 
-     // Animation/render loop for the second model
-     function animate2() {
-         requestAnimationFrame(animate2);
-         renderer2.render(scene2, camera2);
-     }
-     animate2();
- </script>
+    </div>
+      <div class="HOME">
+      <form action="/model" method="GET">
+        <button type="submit">Go to Model Page</button>
+    </form>
+    <form action="/model1" method="GET">
+        <button type="submit">Go to Model1 Page</button>
+    </form>
+    <form action="/model3" method="GET">
+        <button type="submit">Go to Model2 Page</button>
+    </form>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

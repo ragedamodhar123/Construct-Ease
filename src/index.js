@@ -19,6 +19,18 @@ app.get("/signup",(req,res)=>
 {
     res.render("signup");
 });
+app.get('/model', (req, res) => {
+
+   res.render('model');
+});
+app.get('/model1', (req, res) => {
+
+    res.render('model1');
+ });
+    app.get('/model3', (req, res) => {
+    
+        res.render('model3');
+    });
 
 app.post("/signup",async (req,res)=>
 {
@@ -54,7 +66,7 @@ app.post("/login",async(req,res)=>
         const ispasswordmatch=await bcrypt.compare(req.body.password,check.password);
         if(ispasswordmatch)
         {
-            res.render("Home");
+            res.render("home");
         }
         else
         {
