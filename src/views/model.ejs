@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construct Ease</title>
+    <title>1bhk</title>
     <link rel="stylesheet" href="/public/style.css">
     
     
@@ -47,7 +47,7 @@ scene.add(rightLight);
     const loader = new THREE.GLTFLoader();
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load('/public/t4.jpg'); // Replace with your texture file path
-    loader.load('/public/mvh.glb', function (gltf) {
+    loader.load('/public/ohse.glb', function (gltf) {
         const model = gltf.scene;
         // Rest of your code...
         model.traverse((o) => {
@@ -96,7 +96,7 @@ const controls2 = new THREE.OrbitControls(camera2, renderer2.domElement);
      const textureLoader2 = new THREE.TextureLoader();
     
      const loader2 = new THREE.GLTFLoader();
-     loader2.load('/public/3d2.glb', function (gltf) {
+     loader2.load('/public/oonebhk.glb', function (gltf) {
          const model2 = gltf.scene;
          
          scene2.add(model2);
