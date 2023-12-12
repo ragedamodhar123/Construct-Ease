@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ragedamodhar123/Construct-Ease/issues"
   },
-  "homepage": "https://github.com/ragedamodhar123/Construct-Ease#readme"
+  "homepage": "https://github.com/ragedamodhar123/Construct-Ease#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
