@@ -81,7 +81,7 @@ app.post("/login",async(req,res)=>
 
 
 
-const port=3001;
+const port=process.env.PORT;
 app.listen(port,()=>
 {
     console.log(`Server running on port : ${port}`);
