@@ -4,7 +4,7 @@
   "description": "about buildings",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ragedamodhar123/Construct-Ease#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "node": "^20.9.0"
   }
 }
