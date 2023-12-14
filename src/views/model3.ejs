@@ -76,19 +76,19 @@ scene.add(rightLight);
      const renderer2 = new THREE.WebGLRenderer();
      renderer2.setSize(window.innerWidth, window.innerHeight);
      document.getElementById('3d-model-container2').appendChild(renderer2.domElement);
-     const llight = new THREE.PointLight(0xFFFFFF,1); // White light
+     const llight = new THREE.DirectionalLight(0xFFFFFF,2); // White light
 
 llight.position.set(20,50,30); 
 scene2.add(llight);
-const bblight = new THREE.PointLight(0xFFFFFF,1); // White light
+const bblight = new THREE.PointLight(0xFFFFFF,2); // White light
 
 bblight.position.set(20, 50, -30);// Position the light
 scene2.add(bblight);
-const lleftLight = new THREE.PointLight(0xFFFFFF,1); // Left light
+const lleftLight = new THREE.PointLight(0xFFFFFF,2); // Left light
 lleftLight.position.set(-20, 50, 0); 
 scene2.add(lleftLight);
 
-const rrightLight = new THREE.PointLight(0xFFFFFF,1); // Right light
+const rrightLight = new THREE.PointLight(0xFFFFFF,2); // Right light
 rrightLight.position.set(20, 50, 0); 
 scene2.add(rrightLight);
 const controls2 = new THREE.OrbitControls(camera2, renderer2.domElement);
