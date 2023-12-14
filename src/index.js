@@ -6,6 +6,8 @@ const collection=require("./config");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const path=require('path');
+// src/index.js
+require('dotenv').config();
 
 
 app.use(express.static('src/views'));
