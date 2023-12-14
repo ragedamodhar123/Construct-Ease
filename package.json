@@ -21,6 +21,7 @@
   "dependencies": {
     "bcrypt": "",
     "dotenv": "^16.3.1",
-    "express": ""
+    "express": "",
+    "mongoose": "^8.0.3"
   }
 }
