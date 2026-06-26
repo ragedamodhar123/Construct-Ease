@@ -6,19 +6,24 @@ require('dotenv').config();
 
 const mongoose = require('mongoose');
 const connectionString = process.env.MONGODB_URI;
-mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
+// mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
 
-.then(()=>
-{
-    console.log("Database connected successfully");
-})
-.catch((error)=>
-{
-    console.log("Database cannot be connected");
-   // console.log(error.message);
-}
+// .then(()=>
+// {
+//     console.log("Database connected successfully");
+// })
+// .catch((error)=>
+// {
+//     console.log("Database cannot be connected");
+//    // console.log(error.message);
+// }
 
-)
+// )
+
+// Modern drivers handle these automatically
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("Database connected successfully!"))
+  .catch((err) => console.error("Database connection failure:", err));
 const LoginSchema=new mongoose.Schema(
     {
         name:{
